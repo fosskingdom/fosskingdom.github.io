@@ -1,0 +1,35 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#buttons a {
+    text-decoration: none;
+}
+
+#buttons a button {
+    width: 100px;
+    height: 25px;
+}
+
+hr {
+    border: 1px solid grey;
+}
+
+.heading {
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+.img {
+    float: left;
+    margin-left: 10px;
+}
+
+.txt {
+    float: middle;
+}
+
+.shadow {
+    text-shadow: 2px 2px rgb(128, 128, 128);
+}
