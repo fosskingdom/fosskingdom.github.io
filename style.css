@@ -26,6 +26,10 @@ hr {
     margin-left: 10px;
 }
 
+.img img {
+    border-radius: 5%;
+}
+
 .txt {
     float: middle;
 }
