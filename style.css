@@ -45,3 +45,8 @@ hr {
 .shadow {
     text-shadow: 2px 2px rgb(128, 128, 128);
 }
+
+table thead {
+    background-color: #112A46;
+    color: white;
+}
