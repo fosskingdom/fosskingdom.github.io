@@ -2,6 +2,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    background: #ACC8E5;
+    color: #112A46;
+}
+
 #buttons a {
     text-decoration: none;
 }
@@ -12,12 +17,13 @@
 }
 
 hr {
-    border: 1px solid grey;
+    border: 1px dashed #112A46;
 }
 
 .heading {
-    background-color: black;
+    background-color: #112A46;
     color: white;
+    text-shadow: 2px 2px grey;
     width: 100%;
 }
 
