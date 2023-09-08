@@ -28,6 +28,11 @@ hr {
     width: 100%;
 }
 
+.container {
+    align-content: center;
+    display: flexbox;
+}
+
 .img {
     float: left;
     margin: 5px 10px;
@@ -44,6 +49,10 @@ hr {
 
 .shadow {
     text-shadow: 2px 2px rgb(128, 128, 128);
+}
+
+.tbl th, .tbl td {
+    border: solid 1px #112A46;
 }
 
 table thead {
