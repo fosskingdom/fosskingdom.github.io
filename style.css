@@ -30,7 +30,7 @@ hr {
 
 .img {
     float: left;
-    margin-left: 10px;
+    margin: 5px 10px;
 }
 
 .img img {
