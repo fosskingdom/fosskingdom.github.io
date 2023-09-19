@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>FOSS Kingdom</title>
+</head>
+
+<body>
+    <nav class="h-[100px] w-full bg-black text-white relative flex flex-row justify-around items-center lg:static">
+        <div>
+            <h1 title="FOSS Kingdom" class="font-bold text-lg">FOSS Kingdom</h1>
+        </div>
+
+        <div id="list-menu" class="absolute bg-green-500 w-full bottom-[100%] transition-transform duration-300 lg:static lg:bg-black lg:w-fit">
+            <ul class="flex flex-col py-5 items-center gap-[4vh] lg:flex-row lg:py-0">
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline" href="#">Home</a>
+                </li>
+    
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline" href="#about-us">About Us</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline" href="#foss-projects">FOSS Projects</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline" href="#">Privacy Policy</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline" href="#">Contact</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline" href="#">Feedback</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="block lg:hidden">
+            <i onclick="toggleMenu(this);" id="menu-button" class="fa-solid fa-bars font-bold text-green-500"></i>
+        </div>
+    </nav>
+
+    <div id="about-us" class="bg-blue-500 p-4 text-white hover:bg-red-500 duration-500">
+        <h1 class="text-lg font-bold underline sm:text-xl md:text-2xl lg:text-3xl">About Us:</h1>
+    </div>
+
+    <div class="p-3 bg-green-50">
+        <p>Welcome to <b>FOSS Kingdom</b>. We are glad you have decided to join us. We are about to start something exciting! We offers free and open source tools and applications for everyone. When we speak of free softwares, we are referring to the freedom, not price.</p>
+        <br>
+        <p>We want to make your onboard experience free of worry. Feel free to <a href="#">email</a> us if you have any questions at any point in time.</p>
+        <br>
+        <p>We are always looking forward to hearing from you. Your feedback will really help us to imporve our products and services, as we always aim to deliver exactly what our customers need.</p>
+    </div>
+
+    <hr class="w-[95%] mx-auto">
+
+    <div id="foss-projects" class="bg-blue-500 p-4 text-white hover:bg-red-500 duration-500">
+        <h1 class="text-lg font-bold underline sm:text-xl md:text-2xl lg:text-3xl">FOSS Projects:</h1>
+    </div>
+
+    <div class="p-3 bg-green-100">
+        <h2 class="text-md font-bold text-[#F00] my-1 sm:text-lg sm:my-2 md:text-xl md:my-3 lg:text-2xl">Predictor:</h2>
+        <p>Predictor is a free and open source desktop application for predicting USD/INR exchange rate and 24K e-Gold price in India. Predictor is a machine learning algorithms that builds a model based on sample given data, known as training data, in order to make gold price predictions or decisions without being explicitly programmed to do so.</p>
+        <ul class="list-disc ml-5 my-2">
+            <li>It is a supervised machine learning algorithm to predict the future data.</li>
+            <li>It uses linear regression for predicting the future trends.</li>
+            <li>Datasets are provided by various vendors like Google, MMTCPAMP, etc.</li>
+            <li>It can predict values for the next 365 days.</li>
+        </ul>
+        <h2 class="text-md font-bold my-1 underline sm:text-lg sm:my-2 md:text-xl md:my-3 lg:text-2xl">Installation for Linux:</h2>
+        <div class="overflow-auto my-2">
+            <ul class="list-disc ml-5">
+                <li>sudo apt update;</li>
+                <li>sudo apt install git python3-tk python3-venv xtitle -y;</li>
+                <li>git clone https://github.com/fosskingdom/Predictor.git;</li>
+                <li>cd ./Predictor/;</li>
+                <li>python3 -m venv ./venv/;</li>
+                <li>source ./venv/bin/activate;</li>
+                <li>chmod +x ./install.sh;</li>
+                <li>bash ./install.sh</li>
+            </ul>
+        </div>
+        <div class="overflow-auto">
+            <p>
+                <b>Source:</b> <a class="text-blue-700 underline" href="https://github.com/fosskingdom/Predictor.git">https://github.com/fosskingdom/Predictor.git</a>
+            </p>
+        </div>
+        <h2 class="text-md font-bold my-1 underline sm:text-lg sm:my-2 md:text-xl md:my-3 lg:text-2xl">Gallery:</h2>
+        <div class="flex flex-col items-start justify-around sm:flex-row flex-wrap">
+            <section class="w-full mx-auto sm:w-[45%] lg:w-[30%] border-2 h-96 border-black rounded-xl m-2 flex items-center justify-around">
+                <img class="h-96 rounded-xl p-2" src="./predictor-egold-1.png" alt="Predictor eGold 1">
+            </section>
+
+            <section class="w-full mx-auto sm:w-[45%] lg:w-[30%] border-2 h-96 border-black rounded-xl m-2 flex items-center justify-around">
+                <img class="h-96 rounded-xl p-2" src="./predictor-egold-2.png" alt="Predictor eGold 2">
+            </section>
+
+            <section class="w-full mx-auto sm:w-[45%] lg:w-[30%] border-2 h-96 border-black rounded-xl m-2 flex items-center justify-around">
+                <img class="h-96 rounded-xl p-2" src="./predictor-egold-3.png" alt="Predictor eGold 3">
+            </section>
+        </div>
+    </div>
+
+    <hr class="w-[95%] mx-auto">
+
+    <script>
+        function toggleMenu() {
+            const listMenu = document.getElementById("list-menu");
+            const menuButton = document.getElementById("menu-button");
+
+            if (menuButton.classList.contains("fa-bars")) {
+                listMenu.classList.replace("bottom-[100%]", "top-[100%]");
+                menuButton.classList.replace("fa-bars", "fa-times");
+            } else {
+                listMenu.classList.replace("top-[100%]", "bottom-[100%]");
+                menuButton.classList.replace("fa-times", "fa-bars");
+            }
+        }
+    </script>
+</body>
+</html>
