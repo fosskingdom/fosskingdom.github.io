@@ -92,7 +92,7 @@
             <input onclick="clearScreen();" type="reset"
                 class="border-2 w-20 h-10 rounded border-green-700 hover:text-green-700">
         </form>
-        <h1 id="result" class="text-center my-3 text-2xl font-bold underline text-green-800"></h1>
+        <h1 id="result" class="text-center my-3 text-2xl font-bold underline"></h1>
     </div>
     <hr class="border-green-600 w-full">
 
@@ -129,13 +129,16 @@
                 let totalValue = sumOfOddNumbers + sumOfEvenNumbers;
                 if (10 - (totalValue % 10) === Number(cardno.value) % 10) {
                     result.textContent = "This is a valid card number!";
+                    result.style.color = "green";
                     return false;
                 } else {
                     result.textContent = "This is an invalid card number!";
+                    result.style.color = "red";
                     return false;
                 }
             } else {
                 result.textContent = "This is an invalid card number!";
+                result.style.color = "red";
                 return false;
             }
         }
