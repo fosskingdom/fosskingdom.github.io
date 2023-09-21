@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="h-[100px] w-full bg-black text-white relative flex flex-row justify-around items-center lg:static">
+        <div>
+            <h1 title="FOSS Kingdom" class="font-bold text-lg">FOSS Kingdom</h1>
+        </div>
+
+        <div id="list-menu"
+            class="absolute bg-green-500 w-full bottom-[100%] transition-transform duration-300 lg:static lg:bg-black lg:w-fit">
+            <ul class="flex flex-col py-5 items-center gap-[4vh] lg:flex-row lg:py-0">
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="https://fosskingdom.github.io">Home</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="https://fosskingdom.github.io#about-us">About Us</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="https://fosskingdom.github.io#foss-projects">FOSS Projects</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="#">Privacy Policy</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="https://fosskingdom.github.io/portfolio.html">Portfolio</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="#">Contact</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="#">Feedback</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="block lg:hidden">
+            <i onclick="toggleMenu(this);" id="menu-button" class="fa-solid fa-bars font-bold text-green-500"></i>
+        </div>
+    </nav>
+
+    <div id="about-us" class="bg-blue-500 p-4 text-white hover:bg-red-500 duration-500">
+        <h1 class="text-lg font-bold underline sm:text-xl md:text-2xl lg:text-3xl">LUHN ALGORITHM:</h1>
+    </div>
+
+    <div class="p-3 bg-green-100">
+        <p>The Luhn algorithm or Luhn formula, also known as the "<a class="text-blue-600 underline" href="https://en.wikipedia.org/wiki/Modular_arithmetic">modulus</a> 10" or "mod 10" <a class="text-blue-600 underline" href="https://en.wikipedia.org/wiki/Algorithm">algorithm</a>, named after its creator, <a class="text-blue-600 underline" href="https://en.wikipedia.org/wiki/IBM">IBM</a> scientist <a class="text-blue-600 underline" href="https://en.wikipedia.org/wiki/Hans_Peter_Luhn">Hans Peter Luhn</a>, is a simple <a class="text-blue-600 underline" href="https://en.wikipedia.org/wiki/Check_digit">check digit</a> formula used to validate a variety of identification numbers.</p>
+        <br>
+        <p>It is described in U.S. Patent No. 2,950,048, granted on August 23, 1960.</p>
+        <br>
+        <p>The algorithm is in the <a class="text-blue-600 underline" href="https://en.wikipedia.org/wiki/Public_domain">public domain</a> and is in wide use today. It is specified in <a class="text-blue-600 underline" href="https://en.wikipedia.org/wiki/ISO/IEC_7812-1">ISO/IEC 7812-1</a>. It is not intended to be a <a class="text-blue-600 underline" href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">cryptographically secure hash function</a>; it was designed to protect against accidental errors, not malicious attacks. Most credit cards and many government identification numbers use the algorithm as a simple method of distinguishing valid numbers from mistyped or otherwise incorrect numbers.</p>
+        <br>
+        <p>Click <a class="text-blue-600 underline" href="https://en.wikipedia.org/wiki/Luhn_algorithm">here</a> to know more.</p>
+    </div>
+
+    <hr class="border-green-500 w-full">
+
+    <div class="text-center py-3 bg-green-200 flex items-center flex-col justify-around">
+        <form class="my-3" onsubmit="return validateCard();">
+            <label>Credit/Debit Card No:</label>&nbsp;&nbsp;
+            <input class="rounded" type="text" id="cardno" placeholder="Enter the card no" required>
+
+            <br />
+            <br />
+
+            <input type="submit" class="border-2 w-20 h-10 rounded border-green-700 hover:text-green-700">&nbsp;&nbsp;
+            <input onclick="clearScreen();" type="reset"
+                class="border-2 w-20 h-10 rounded border-green-700 hover:text-green-700">
+        </form>
+        <h1 id="result" class="text-center my-3 text-2xl font-bold underline text-green-800"></h1>
+    </div>
+    <hr class="border-green-500 w-full">
+
+    <script>
+        function validateCard() {
+            var cardno = document.getElementById("cardno");
+            var result = document.getElementById("result");
+
+            // Checking the string contains only numerical values and the length must be 16 characters long.
+            if (/^\d+$/.test(cardno.value) && cardno.value.length === 16) {
+                var sumOfOddNumbers = Number();
+                var sumOfEvenNumbers = Number();
+
+                // Adding the sum of odd numbers.
+                for (let i = 0; i < cardno.value.length - 1;) {
+                    let j = cardno.value[i] * 2;
+                    if (j < 10) {
+                        sumOfOddNumbers = sumOfOddNumbers + j;
+                    } else {
+                        for (let i = 0; i < 2; i++) {
+                            sumOfOddNumbers = sumOfOddNumbers + Number(j.toString()[i]);
+                        }
+                    }
+
+                    i += 2;
+                }
+
+                // Adding sum of even numbers.
+                for (let i = 1; i < cardno.value.length - 1;) {
+                    sumOfEvenNumbers = sumOfEvenNumbers + Number(cardno.value[i]);
+                    i += 2;
+                }
+
+                let totalValue = sumOfOddNumbers + sumOfEvenNumbers;
+                if (10 - (totalValue % 10) === Number(cardno.value) % 10) {
+                    result.textContent = "This is a valid card number!";
+                    return false;
+                } else {
+                    result.textContent = "This is an invalid card number!";
+                    return false;
+                }
+            } else {
+                result.textContent = "This is an invalid card number!";
+                return false;
+            }
+        }
+
+        function clearScreen() {
+            var result = document.getElementById("result");
+            result.textContent = String();
+        }
+
+        function toggleMenu() {
+            const listMenu = document.getElementById("list-menu");
+            const menuButton = document.getElementById("menu-button");
+
+            if (menuButton.classList.contains("fa-bars")) {
+                listMenu.classList.replace("bottom-[100%]", "top-[100%]");
+                menuButton.classList.replace("fa-bars", "fa-times");
+            } else {
+                listMenu.classList.replace("top-[100%]", "bottom-[100%]");
+                menuButton.classList.replace("fa-times", "fa-bars");
+            }
+        }
+    </script>
+</body>
+
+</html>
