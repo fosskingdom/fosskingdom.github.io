@@ -163,7 +163,9 @@
                     i += 2;
                 }
 
-                if (10 - (sumOfOddNumbers + sumOfEvenNumbers % 10) === Number(cardno.value) % 10) {
+                let totalSum = sumOfOddNumbers + sumOfEvenNumbers;
+
+                if (10 - (totalSum % 10) === Number(cardno.value) % 10) {
                     result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
                     result.style.color = "green";
                     return false;
