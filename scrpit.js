@@ -46,11 +46,13 @@ function validateCard() {
         }
 
         if (10 - (sumOfOddNumbers + sumOfEvenNumbers % 10) === Number(cardno.value) % 10) {
+            console.log("This is a valid card number!");
             result.textContent = "This is a valid card number!";
             result.style.color = "green";
             return false;
         }
     } else {
+        console.log("This is an invalid card number!");
         result.textContent = "This is an invalid card number!";
         result.style.color = "red";
         return false;
