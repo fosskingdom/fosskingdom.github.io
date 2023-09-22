@@ -164,13 +164,13 @@
                 }
 
                 if (10 - (sumOfOddNumbers + sumOfEvenNumbers % 10) === Number(cardno.value) % 10) {
-                    result.textContent = "This is a valid card number!";
+                    result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
                     result.style.color = "green";
                     return false;
                 }
             }
 
-            result.textContent = "This is an invalid card number!";
+            result.innerHTML = '<i class="fa-regular fa-thumbs-down fa-bounce"></i> This is an invalid card number!';
             result.style.color = "red";
             return false;
         }
