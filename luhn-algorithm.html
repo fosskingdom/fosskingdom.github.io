@@ -101,7 +101,7 @@
         <form class="my-3" onsubmit=" return validateCard();">
             <label>
                 Credit/Debit Card No:&nbsp;&nbsp;
-                <input class="rounded" type="text" id="cardno" placeholder="Enter the card no" minlength="12" maxlength="19" required>
+                <input class="rounded" type="number" id="cardno" placeholder="Enter the card no" minlength="12" maxlength="19" required>
             </label>
 
             <br />
@@ -135,6 +135,7 @@
         }
 
         function validateCard() {
+            var checkDigit = Number(cardno.value) % 10;
             var cardno = document.getElementById("cardno");
             var result = document.getElementById("result");
 
@@ -164,8 +165,9 @@
                 }
 
                 let totalSum = sumOfOddNumbers + sumOfEvenNumbers;
+                let lastDigitInTotal = totalSum % 10;
 
-                if (10 - (totalSum % 10) === Number(cardno.value) % 10) {
+                if (10 - lastDigitInTotal === checkDigit) {
                     result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
                     result.style.color = "green";
                     return false;
