@@ -101,7 +101,7 @@
         <form class="my-3" onsubmit=" return validateCard();">
             <label>
                 Credit/Debit Card No:&nbsp;&nbsp;
-                <input class="rounded" type="text" id="cardno" placeholder="Enter the card no" required>
+                <input class="rounded" type="text" id="cardno" placeholder="Enter the card no" minlength="12" maxlength="19" required>
             </label>
 
             <br />
@@ -139,7 +139,7 @@
             var result = document.getElementById("result");
 
             // Checking the string contains only numerical values and the length must be 16 characters long.
-            if (/^\d+$/.test(cardno.value) && cardno.value.length === 16) {
+            if (/^\d+$/.test(cardno.value)) {
                 var sumOfOddNumbers = Number();
                 var sumOfEvenNumbers = Number();
 
