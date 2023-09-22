@@ -101,7 +101,7 @@
         <form class="my-3" onsubmit=" return validateCard();">
             <label>
                 Credit/Debit Card No:&nbsp;&nbsp;
-                <input class="rounded" type="number" id="cardno" placeholder="Enter the card no" minlength="12" maxlength="19" required>
+                <input class="rounded" type="text" id="cardno" placeholder="Enter the card no" minlength="12" maxlength="19" required>
             </label>
 
             <br />
@@ -135,11 +135,7 @@
         }
 
         function validateCard() {
-            var checkDigit = Number(cardno.value) % 10;
             var cardno = document.getElementById("cardno");
-            console.log(cardno.value);
-            console.log(typeof cardno.value);
-            return false;
             var result = document.getElementById("result");
 
             // Checking the string contains only numerical values and the length must be 16 characters long.
@@ -167,10 +163,7 @@
                     i += 2;
                 }
 
-                let totalSum = sumOfOddNumbers + sumOfEvenNumbers;
-                let lastDigitInTotal = totalSum % 10;
-
-                if (10 - lastDigitInTotal === checkDigit) {
+                if (10 - ((sumOfOddNumbers + sumOfEvenNumbers) % 10) === Number(cardno.value) % 10) {
                     result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
                     result.style.color = "green";
                     return false;
@@ -180,7 +173,7 @@
                     return false;
                 }
             } else {
-                result.innerHTML = '<i class="fa-regular fa-thumbs-down fa-bounce"></i> This is an invalid card number!';
+                result.innerHTML = '<i class="fa-regular fa-circle-xmark fa-beat"></i> Please enter the correct number!';
                 result.style.color = "red";
                 return false;
             }
