@@ -137,6 +137,8 @@
         function validateCard() {
             var checkDigit = Number(cardno.value) % 10;
             var cardno = document.getElementById("cardno");
+            console.log(cardno.value);
+            return false;
             var result = document.getElementById("result");
 
             // Checking the string contains only numerical values and the length must be 16 characters long.
