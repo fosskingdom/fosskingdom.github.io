@@ -167,12 +167,16 @@
                     result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
                     result.style.color = "green";
                     return false;
+                } else {
+                    result.innerHTML = '<i class="fa-regular fa-thumbs-down fa-bounce"></i> This is an invalid card number!';
+                    result.style.color = "red";
+                    return false;
                 }
+            } else {
+                result.innerHTML = '<i class="fa-regular fa-thumbs-down fa-bounce"></i> This is an invalid card number!';
+                result.style.color = "red";
+                return false;
             }
-
-            result.innerHTML = '<i class="fa-regular fa-thumbs-down fa-bounce"></i> This is an invalid card number!';
-            result.style.color = "red";
-            return false;
         }
     </script>
 </body>
