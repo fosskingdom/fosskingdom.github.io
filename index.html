@@ -139,7 +139,20 @@
         <p>Click <a class="text-blue-600 underline" href="./luhn-algorithm.html">here</a> to know more.</p>
     </div>
 
-    <script src="./scrpit.js"></script>
+    <script>
+        function toggleMenu() {
+            const listMenu = document.getElementById("list-menu");
+            const menuButton = document.getElementById("menu-button");
+
+            if (menuButton.classList.contains("fa-bars")) {
+                listMenu.classList.replace("bottom-[100%]", "top-[100%]");
+                menuButton.classList.replace("fa-bars", "fa-times");
+            } else {
+                listMenu.classList.replace("top-[100%]", "bottom-[100%]");
+                menuButton.classList.replace("fa-times", "fa-bars");
+            }
+        }
+    </script>
 </body>
 
 </html>
