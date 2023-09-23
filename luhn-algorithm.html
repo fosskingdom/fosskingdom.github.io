@@ -187,9 +187,12 @@
 
                     } else if (iinRang === "62" && (cardno.value.length <= 16 && cardno.value.length >= 19)) {
                         cardName = "China UnionPay";
+                    } else if (iinRange === "36" && (cardno.value.length <= 14 && cardno.value.length >= 19)) {
+                        cardName = "Diners Club International";
                     }
 
                     alert(cardName);
+                    return false;
 
                     if (cardName) {
                         result.innerHTML = `<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid ${cardName} card!`;
