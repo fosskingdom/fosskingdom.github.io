@@ -113,14 +113,15 @@
                 class="border-2 w-20 h-10 rounded border-green-700 hover:text-green-700">
         </form>
         <div class="flex flex-row">
-            <img class="w-[30px] mx-0.5" src="./Assets/american-express.png" alt="American Express">
-            <img class="w-[30px] mx-0.5" src="./Assets/diners-club.png" alt="Diners Club">
-            <img class="w-[30px] mx-0.5" src="./Assets/discover.png" alt="Discover">
-            <img class="w-[30px] mx-0.5" src="./Assets/jcb.png" alt="JCB">
-            <img class="w-[30px] mx-0.5" src="./Assets/maestro.png" alt="Maestro">
-            <img class="w-[30px] mx-0.5" src="./Assets/mastercard.png" alt="Mastercard">
-            <img class="w-[30px] mx-0.5" src="./Assets/rupay.png" alt="RuPay">
-            <img class="w-[30px] mx-0.5" src="./Assets/visa.png" alt="Visa">
+            <img class="w-[30px] mx-0.5" src="./Assets/american-express.png" alt="American Express"
+                title="American Express">
+            <img class="w-[30px] mx-0.5" src="./Assets/diners-club.png" alt="Diners Club" title="Diners Club">
+            <img class="w-[30px] mx-0.5" src="./Assets/discover.png" alt="Discover" title="Discover">
+            <img class="w-[30px] mx-0.5" src="./Assets/jcb.png" alt="JCB" title="JCB">
+            <img class="w-[30px] mx-0.5" src="./Assets/maestro.png" alt="Maestro" title="Maestro">
+            <img class="w-[30px] mx-0.5" src="./Assets/mastercard.png" alt="Mastercard" title="Mastercard">
+            <img class="w-[30px] mx-0.5" src="./Assets/rupay.png" alt="RuPay" title="RuPay">
+            <img class="w-[30px] mx-0.5" src="./Assets/visa.png" alt="Visa" title="Visa">
         </div>
         <h1 id="result" class="text-center my-3 text-2xl font-bold underline"></h1>
     </div>
@@ -184,18 +185,20 @@
 
                     if ((iinRange === "34" || iinRange === "37") && cardno.value.length === 15) {
                         cardName = "American Express";
-                    } else if (iinRange === "31" && cardno.value.length === 19) {
-                        cardName = "China T-Union";
-                    } else if (iinRange === "62" && (cardno.value.length <= 16 && cardno.value.length >= 19)) {
-                        cardName = "China UnionPay";
                     } else if (iinRange === "36" && (cardno.value.length <= 14 && cardno.value.length >= 19)) {
                         cardName = "Diners Club International";
                     } else if (iinRange === "54" && cardno.value.length === 16) {
-                        cardName = "Diners Club";
+                        cardName = "Diners";
+                    } else if (iinRange === "65" && (cardno.value.length <= 16 && cardno.value.length >= 19)) {
+                        cardName = "Discover"
+                    } else if ((iinRange === "51" || iinRange === "52" || iinRange === "53" || iinRange === "54" || iinRange === "55") && cardno.value.length === 16) {
+                        cardName = "Mastercard"
+                    } else if ((iinRange === "60" || iinRange === "65" || iinRange === "81" || iinRange === "82") && cardno.value.length === 16) {
+                        cardName = "RuPay"
                     }
 
                     if (cardName) {
-                        result.innerHTML = `<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid ${cardName} number!`;
+                        result.innerHTML = `<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid ${cardName} card number!`;
                         result.style.color = "green";
                         return false;
                     } else {
