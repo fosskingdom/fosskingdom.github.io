@@ -179,22 +179,46 @@
                     var iinRange = String();
                     var cardName = String();
 
+                    for (let i = 0; i < 1; i++) {
+                        iinRange += cardno.value[i];
+                    }
+
+                    if (iinRange === "4" && (cardno.value.length === 13 || cardno.value.length === 16 || cardno.value.length === 19)) {
+                        cardName = "Visa";
+                        iinRange = String();
+                    }
+
                     for (let i = 0; i < 2; i++) {
                         iinRange += cardno.value[i];
                     }
 
                     if ((iinRange === "34" || iinRange === "37") && cardno.value.length === 15) {
                         cardName = "American Express";
+                        iinRange = String();
                     } else if (iinRange === "36" && (cardno.value.length <= 14 && cardno.value.length >= 19)) {
                         cardName = "Diners Club International";
+                        iinRange = String();
                     } else if (iinRange === "54" && cardno.value.length === 16) {
                         cardName = "Diners";
+                        iinRange = String();
                     } else if (iinRange === "65" && (cardno.value.length <= 16 && cardno.value.length >= 19)) {
-                        cardName = "Discover"
+                        cardName = "Discover";
+                        iinRange = String();
                     } else if ((iinRange === "51" || iinRange === "52" || iinRange === "53" || iinRange === "54" || iinRange === "55") && cardno.value.length === 16) {
-                        cardName = "Mastercard"
+                        cardName = "Mastercard";
+                        iinRange = String();
                     } else if ((iinRange === "60" || iinRange === "65" || iinRange === "81" || iinRange === "82") && cardno.value.length === 16) {
-                        cardName = "RuPay"
+                        cardName = "RuPay";
+                        iinRange = String();
+                    }
+
+                    for (let i = 0; i < 3; i++) {
+                        iinRange += cardno.value[i];
+                    }
+
+                    if ((iinRange === "644" || iinRange === "645" || iinRange === "646" || iinRange === "647" || iinRange === "648" || iinRange === "649") && (cardno.value.length <= 16 && cardno.value.length >= 19)) {
+                        cardName = "Discover";
+                        iinRange = String();
                     }
 
                     if (cardName) {
