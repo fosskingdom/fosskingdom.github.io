@@ -101,7 +101,8 @@
         <form class="my-3" onsubmit=" return validateCard();">
             <label>
                 Credit/Debit Card No:&nbsp;&nbsp;
-                <input class="rounded" type="text" id="cardno" placeholder="Enter the card no" minlength="12" maxlength="19" required>
+                <input class="rounded" type="text" id="cardno" placeholder="Enter the card no" minlength="12"
+                    maxlength="19" required>
             </label>
 
             <br />
@@ -144,6 +145,18 @@
             result.textContent = String();
         }
 
+        function findCardName(cardno) {
+            var iinRange = String();
+
+            for (let i=0; i<2; i++) {
+                iinRange = iinRange + cardno.value;
+            }
+
+            if ((iinRange === "34" || iinRange === "37") && cardno.value.length === 15) {
+                return "American Express"
+            }
+        }
+
         function validateCard() {
             var cardno = document.getElementById("cardno");
             var result = document.getElementById("result");
@@ -174,9 +187,15 @@
                 }
 
                 if (10 - ((sumOfOddNumbers + sumOfEvenNumbers) % 10) === Number(cardno.value) % 10) {
-                    result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
-                    result.style.color = "green";
-                    return false;
+                    var cardName = findCardName(cardno);
+
+                    if (cardName) {
+                        result.innerHTML = `<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid ${cardName} card!`;
+                    } else {
+                        result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
+                        result.style.color = "green";
+                        return false;
+                    }
                 } else {
                     result.innerHTML = '<i class="fa-regular fa-thumbs-down fa-bounce"></i> This is an invalid card number!';
                     result.style.color = "red";
