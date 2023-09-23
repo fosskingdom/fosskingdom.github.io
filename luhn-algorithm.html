@@ -153,10 +153,12 @@
             }
 
             if ((iinRange === "34" || iinRange === "37") && cardno.value.length === 15) {
+                console.log("American Express")
                 return "American Express";
             }
 
             if (iinRange === "31" && cardno.value.length === 19) {
+                console.log("China T-Union")
                 return "China T-Union";
             }
 
@@ -194,6 +196,8 @@
 
                 if (10 - ((sumOfOddNumbers + sumOfEvenNumbers) % 10) === Number(cardno.value) % 10) {
                     var cardName = findCardName(cardno);
+
+                    console.log(cardName);
 
                     if (cardName) {
                         result.innerHTML = `<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid ${cardName} card!`;
