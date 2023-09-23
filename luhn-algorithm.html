@@ -184,10 +184,10 @@
 
                     if ((iinRange === "34" || iinRange === "37") && cardno.value.length === 15) {
                         cardName = "American Express";
-                    }
-
-                    if (iinRange === "31" && cardno.value.length === 19) {
+                    } else if (iinRange === "31" && cardno.value.length === 19) {
                         cardName = "China T-Union";
+                    } else if (iinRang === "62" && (cardno.value.length <= 16 && cardno.value.length >= 19)) {
+                        cardName = "China UnionPay";
                     }
 
                     if (cardName) {
