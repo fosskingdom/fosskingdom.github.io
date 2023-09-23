@@ -98,7 +98,7 @@
     <hr class="border-green-600 w-full">
 
     <div class="text-center py-3 bg-green-200 flex items-center flex-col justify-around">
-        <form class="my-3" onsubmit="return validateCard();">
+        <form class="my-3" onsubmit="return validateCard(this);">
             <label>
                 Credit/Debit Card No:&nbsp;&nbsp;
                 <input class="rounded" type="text" id="cardno" placeholder="Enter the card no" minlength="12"
@@ -166,7 +166,6 @@
                     i += 2;
                 }
 
-                // Adding sum of even numbers.
                 for (let i = 1; i < cardno.value.length - 1;) {
                     sumOfEvenNumbers = sumOfEvenNumbers + Number(cardno.value[i]);
                     i += 2;
