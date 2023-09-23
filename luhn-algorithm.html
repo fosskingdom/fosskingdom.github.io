@@ -152,7 +152,7 @@
             if (/^\d+$/.test(cardno.value)) {
                 var sumOfOddNumbers = Number();
                 var sumOfEvenNumbers = Number();
-                var checkDigit = Number(cardno.value) % 10;
+                var checkDigit = BigInt(cardno.value) % BigInt(10);
 
                 for (let i = 0; i < cardno.value.length - 1;) {
                     let j = cardno.value[i] * 2;
@@ -183,12 +183,26 @@
                     }
 
                     if ((iinRange === "34" || iinRange === "37") && cardno.value.length === 15) {
-                        cardName = "American Express"
+                        cardName = "American Express";
+                    } else if (iinRange === "31" && cardno.value.length === 19) {
+                        cardName = "China T-Union";
+                    } else if (iinRange === "62" && (cardno.value.length <= 16 && cardno.value.length >= 19)) {
+                        cardName = "China UnionPay";
+                    } else if (iinRange === "36" && (cardno.value.length <= 14 && cardno.value.length >= 19)) {
+                        cardName = "Diners Club International";
+                    } else if (iinRange === "54" && cardno.value.length === 16) {
+                        cardName = "Diners Club";
                     }
 
-                    result.innerHTML = `<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid ${cardName} number!`;
-                    result.style.color = "green";
-                    return false;
+                    if (cardName) {
+                        result.innerHTML = `<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid ${cardName} number!`;
+                        result.style.color = "green";
+                        return false;
+                    } else {
+                        result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
+                        result.style.color = "green";
+                        return false;
+                    }
                 } else {
                     result.innerHTML = '<i class="fa-regular fa-thumbs-down fa-bounce"></i> This is an invalid card number!';
                     result.style.color = "red";
