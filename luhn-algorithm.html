@@ -152,6 +152,7 @@
             if (/^\d+$/.test(cardno.value)) {
                 var sumOfOddNumbers = Number();
                 var sumOfEvenNumbers = Number();
+                var checkDigit = Number(cardno.value) % 10;
 
                 for (let i = 0; i < cardno.value.length - 1;) {
                     let j = cardno.value[i] * 2;
@@ -171,15 +172,15 @@
                     i += 2;
                 }
 
-                if (10 - ((sumOfOddNumbers + sumOfEvenNumbers) % 10) === Number(cardno.value) % 10) {
+                var totalSum = sumOfOddNumbers + sumOfEvenNumbers;
+
+                if (10 - (totalSum % 10) === checkDigit) {
                     var iinRang = String();
                     var cardName = String();
 
-                    for (let i = 0; i < 2; i++) {
-                        iinRange = iinRange + cardno.value[i];
+                    for (let i=0; i<2; i++) {
+                        iinRange += cardno.value[i];
                     }
-
-                    alert(iinRang);
 
                     if ((iinRange === "34" || iinRange === "37") && cardno.value.length === 15) {
                         cardName = "American Express";
