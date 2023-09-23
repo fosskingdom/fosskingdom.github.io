@@ -145,26 +145,6 @@
             result.textContent = String();
         }
 
-        function findCardName(cardno) {
-            var iinRange = String();
-
-            for (let i=0; i<2; i++) {
-                iinRange = iinRange + cardno.value;
-            }
-
-            if ((iinRange === "34" || iinRange === "37") && cardno.value.length === 15) {
-                console.log("American Express")
-                return "American Express";
-            }
-
-            if (iinRange === "31" && cardno.value.length === 19) {
-                console.log("China T-Union")
-                return "China T-Union";
-            }
-
-            return false;
-        }
-
         function validateCard() {
             var cardno = document.getElementById("cardno");
             var result = document.getElementById("result");
@@ -195,9 +175,20 @@
                 }
 
                 if (10 - ((sumOfOddNumbers + sumOfEvenNumbers) % 10) === Number(cardno.value) % 10) {
-                    var cardName = findCardName(cardno);
+                    var iinRang = String();
+                    var cardName = String();
 
-                    console.log(cardName);
+                    for (let i = 0; i < 2; i++) {
+                        iinRange = iinRange + cardno.value;
+                    }
+
+                    if ((iinRange === "34" || iinRange === "37") && cardno.value.length === 15) {
+                        cardName = "American Express";
+                    }
+
+                    if (iinRange === "31" && cardno.value.length === 19) {
+                        cardName = "China T-Union";
+                    }
 
                     if (cardName) {
                         result.innerHTML = `<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid ${cardName} card!`;
