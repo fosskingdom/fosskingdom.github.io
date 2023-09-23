@@ -153,8 +153,14 @@
             }
 
             if ((iinRange === "34" || iinRange === "37") && cardno.value.length === 15) {
-                return "American Express"
+                return "American Express";
             }
+
+            if (iinRange === "31" && cardno.value.length === 19) {
+                return "China T-Union";
+            }
+
+            return false;
         }
 
         function validateCard() {
