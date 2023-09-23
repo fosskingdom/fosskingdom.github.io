@@ -149,12 +149,10 @@
             var cardno = document.getElementById("cardno");
             var result = document.getElementById("result");
 
-            // Checking the string contains only numerical values and the length must be 16 characters long.
             if (/^\d+$/.test(cardno.value)) {
                 var sumOfOddNumbers = Number();
                 var sumOfEvenNumbers = Number();
 
-                // Adding the sum of odd numbers.
                 for (let i = 0; i < cardno.value.length - 1;) {
                     let j = cardno.value[i] * 2;
                     if (j < 10) {
@@ -186,12 +184,17 @@
                         cardName = "American Express";
                     } else if (iinRange === "31" && cardno.value.length === 19) {
                         cardName = "China T-Union";
+
                     } else if (iinRang === "62" && (cardno.value.length <= 16 && cardno.value.length >= 19)) {
                         cardName = "China UnionPay";
                     }
 
+                    alert(cardName);
+
                     if (cardName) {
                         result.innerHTML = `<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid ${cardName} card!`;
+                        result.style.color = "green";
+                        return false;
                     } else {
                         result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
                         result.style.color = "green";
