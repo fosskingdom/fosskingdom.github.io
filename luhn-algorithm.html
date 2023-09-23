@@ -175,32 +175,9 @@
                 var totalSum = sumOfOddNumbers + sumOfEvenNumbers;
 
                 if (10 - (totalSum % 10) === checkDigit) {
-                    var iinRang = String();
-                    var cardName = String();
-
-                    for (let i=0; i<2; i++) {
-                        iinRange += cardno.value[i];
-                    }
-
-                    if ((iinRange === "34" || iinRange === "37") && cardno.value.length === 15) {
-                        cardName = "American Express";
-                    } else if (iinRange === "31" && cardno.value.length === 19) {
-                        cardName = "China T-Union";
-                    } else if (iinRang === "62" && (cardno.value.length <= 16 && cardno.value.length >= 19)) {
-                        cardName = "China UnionPay";
-                    } else if (iinRange === "36" && (cardno.value.length <= 14 && cardno.value.length >= 19)) {
-                        cardName = "Diners Club International";
-                    }
-
-                    if (cardName) {
-                        result.innerHTML = `<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid ${cardName} card!`;
-                        result.style.color = "green";
-                        return false;
-                    } else {
-                        result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
-                        result.style.color = "green";
-                        return false;
-                    }
+                    result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
+                    result.style.color = "green";
+                    return false;
                 } else {
                     result.innerHTML = '<i class="fa-regular fa-thumbs-down fa-bounce"></i> This is an invalid card number!';
                     result.style.color = "red";
