@@ -147,16 +147,17 @@
         }
 
         function validateCard() {
-            var cardno = document.getElementById("cardno");
-            var result = document.getElementById("result");
+            var cardno = document.getElementById("cardno").value;
+            var result = document.getElementById("result").value;
+            var totalDigits = cardno.length;
 
-            if (/^\d+$/.test(cardno.value)) {
+            if (/^\d+$/.test(cardno)) {
                 var sumOfOddNumbers = Number();
                 var sumOfEvenNumbers = Number();
-                var checkDigit = BigInt(cardno.value) % BigInt(10);
+                var checkDigit = BigInt(cardno) % BigInt(10);
 
-                for (let i = 0; i < cardno.value.length - 1;) {
-                    let j = cardno.value[i] * 2;
+                for (let i = 0; i < totalDigits - 1;) {
+                    let j = cardno[i] * 2;
                     if (j < 10) {
                         sumOfOddNumbers = sumOfOddNumbers + j;
                     } else {
@@ -168,68 +169,17 @@
                     i += 2;
                 }
 
-                for (let i = 1; i < cardno.value.length - 1;) {
-                    sumOfEvenNumbers = sumOfEvenNumbers + Number(cardno.value[i]);
+                for (let i = 1; i < totalDigits - 1;) {
+                    sumOfEvenNumbers = sumOfEvenNumbers + Number(cardno[i]);
                     i += 2;
                 }
 
                 var totalSum = sumOfOddNumbers + sumOfEvenNumbers;
 
                 if (10 - (totalSum % 10) === Number(checkDigit)) {
-                    var iinRange = String();
-                    var cardName = String();
-
-                    for (let i=0; i<1; i++) {
-                        iinRange += cardno.value[i];
-                    }
-
-                    if (iinRange === "4" && (cardno.value.length === 13 || cardno.value.length === 16 || cardno.value.length === 19)) {
-                        cardName = "Visa";
-                        iinRange = String();
-                    }
-
-                    for (let i = 0; i < 2; i++) {
-                        iinRange += cardno.value[i];
-                    }
-
-                    if ((iinRange === "34" || iinRange === "37") && cardno.value.length === 15) {
-                        cardName = "American Express";
-                        iinRange = String();
-                    } else if (iinRange === "36" && (cardno.value.length <= 14 && cardno.value.length >= 19)) {
-                        cardName = "Diners Club International";
-                        iinRange = String();
-                    } else if (iinRange === "54" && cardno.value.length === 16) {
-                        cardName = "Diners";
-                        iinRange = String();
-                    } else if (iinRange === "65" && (cardno.value.length <= 16 && cardno.value.length >= 19)) {
-                        cardName = "Discover";
-                        iinRange = String();
-                    } else if ((iinRange === "51" || iinRange === "52" || iinRange === "53" || iinRange === "54" || iinRange === "55") && cardno.value.length === 16) {
-                        cardName = "Mastercard";
-                        iinRange = String();
-                    } else if ((iinRange === "60" || iinRange === "65" || iinRange === "81" || iinRange === "82") && cardno.value.length === 16) {
-                        cardName = "RuPay";
-                        iinRange = String();
-                    }
-
-                    for (let i = 0; i < 3; i++) {
-                        iinRange += cardno.value[i];
-                    }
-
-                    if ((iinRange === "644" || iinRange === "645" || iinRange === "646" || iinRange === "647" || iinRange === "648" || iinRange === "649") && (cardno.value.length <= 16 && cardno.value.length >= 19)) {
-                        cardName = "Discover";
-                        iinRange = String();
-                    }
-
-                    if (cardName) {
-                        result.innerHTML = `<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid ${cardName} card number!`;
-                        result.style.color = "green";
-                        return false;
-                    } else {
-                        result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
-                        result.style.color = "green";
-                        return false;
-                    }
+                    result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
+                    result.style.color = "green";
+                    return false;
                 } else {
                     result.innerHTML = '<i class="fa-regular fa-thumbs-down fa-bounce"></i> This is an invalid card number!';
                     result.style.color = "red";
