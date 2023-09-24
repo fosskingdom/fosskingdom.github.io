@@ -101,14 +101,15 @@
         <form class="my-3" onsubmit="return validateCard(this);">
             <label>
                 Credit/Debit Card No:&nbsp;&nbsp;
-                <input class="rounded border-2 border-green-700" type="text" id="cardno" placeholder="Enter the card no" minlength="12"
-                    maxlength="19" required>
+                <input class="rounded border-2 border-green-700" type="text" id="cardno" placeholder="Enter the card no"
+                    minlength="12" maxlength="19" required>
             </label>
 
             <br />
             <br />
 
-            <input type="submit" class="border-2 w-[120px] h-10 rounded border-green-700 hover:text-green-700">&nbsp;&nbsp;
+            <input type="submit"
+                class="border-2 w-[120px] h-10 rounded border-green-700 hover:text-green-700">&nbsp;&nbsp;
             <input onclick="clearScreen();" type="reset"
                 class="border-2 w-[120px] h-10 rounded border-green-700 hover:text-green-700">
         </form>
@@ -177,7 +178,14 @@
                 var totalSum = sumOfOddNumbers + sumOfEvenNumbers;
 
                 if (10 - (totalSum % 10) === Number(checkDigit)) {
-                    result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
+                    if (cardno.startsWith("463237") && totalDigits === 16) {
+                        result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid Visa card.';
+                    } else if (cardno.startsWith("65221") && totalDigits === 16) {
+                        result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid RuPay card.';
+                    } else {
+                        result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
+                    }
+
                     result.style.color = "green";
                     return false;
                 } else {
