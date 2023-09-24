@@ -148,7 +148,7 @@
 
         function validateCard() {
             var cardno = document.getElementById("cardno").value;
-            var result = document.getElementById("result").value;
+            var result = document.getElementById("result");
             var totalDigits = cardno.length;
 
             if (/^\d+$/.test(cardno)) {
