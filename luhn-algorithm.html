@@ -179,7 +179,7 @@
 
                 if (10 - (totalSum % 10) === Number(checkDigit)) {
                     if (totalDigits === 16) {
-                        if (cardno.startsWith("463237")) {
+                        if (cardno.startsWith("42270") || cardno.startsWith("4379") || cardno.startsWith("4538") || cardno.startsWith("463237")) {
                             result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid Visa card.';
                         } else if (cardno.startsWith("45845") || cardno.startsWith("607") || cardno.startsWith("6081") || cardno.startsWith("6082") || cardno.startsWith("6083") || cardno.startsWith("65218") || cardno.startsWith("65221") || cardno.startsWith("65285")) {
                             result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid RuPay card.';
