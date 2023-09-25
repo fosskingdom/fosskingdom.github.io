@@ -178,14 +178,14 @@
                 var totalSum = sumOfOddNumbers + sumOfEvenNumbers;
 
                 if (10 - (totalSum % 10) === Number(checkDigit)) {
-                    if (cardno.startsWith("463237") && totalDigits === 16) {
-                        result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid Visa card.';
-                    } else if (cardno.startsWith("607") && totalDigits === 16) {
-                        result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid RuPay card.';
-                    } else if (cardno.startsWith("6083") && totalDigits === 16) {
-                        result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid RuPay card.';
-                    } else if (cardno.startsWith("65221") && totalDigits === 16) {
-                        result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid RuPay card.';
+                    if (totalDigits === 16) {
+                        if (cardno.startsWith("463237")) {
+                            result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid Visa card.';
+                        } else if (cardno.startsWith("45845") || cardno.startsWith("607") || cardno.startsWith("6081") || cardno.startsWith("6082") || cardno.startsWith("6083") || cardno.startsWith("65221")) {
+                            result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid RuPay card.';
+                        } else {
+                            result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
+                        }
                     } else {
                         result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid card number!';
                     }
