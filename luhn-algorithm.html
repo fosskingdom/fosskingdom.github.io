@@ -180,6 +180,8 @@
                 if (10 - (totalSum % 10) === Number(checkDigit)) {
                     if (cardno.startsWith("463237") && totalDigits === 16) {
                         result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid Visa card.';
+                    } else if (cardno.startsWith("607") && totalDigits === 16) {
+                        result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid RuPay card.';
                     } else if (cardno.startsWith("65221") && totalDigits === 16) {
                         result.innerHTML = '<i class="fa-regular fa-thumbs-up fa-bounce"></i> This is a valid RuPay card.';
                     } else {
