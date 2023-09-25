@@ -9,7 +9,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="./Assets/Anonymous_emblem.svg.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>LUHN Algorithm</title>
 </head>
 
 <body>
@@ -160,8 +160,8 @@
 
     <script>
         function toggleMenu() {
-            const listMenu = document.getElementById("list-menu");
-            const menuButton = document.getElementById("menu-button");
+            const listMenu = window.document.getElementById("list-menu");
+            const menuButton = window.document.getElementById("menu-button");
 
             if (menuButton.classList.contains("fa-bars")) {
                 listMenu.classList.replace("bottom-[100%]", "top-[100%]");
@@ -173,13 +173,13 @@
         }
 
         function clearScreen() {
-            var result = document.getElementById("result");
+            var result = window.document.getElementById("result");
             result.textContent = String();
         }
 
         function validateCard() {
-            var cardno = document.getElementById("cardno").value;
-            var result = document.getElementById("result");
+            var cardno = window.document.getElementById("cardno").value;
+            var result = window.document.getElementById("result");
             var totalDigits = cardno.length;
 
             if (/^\d+$/.test(cardno)) {

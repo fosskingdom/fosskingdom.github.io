@@ -141,8 +141,8 @@
 
     <script>
         function toggleMenu() {
-            const listMenu = document.getElementById("list-menu");
-            const menuButton = document.getElementById("menu-button");
+            const listMenu = window.document.getElementById("list-menu");
+            const menuButton = window.document.getElementById("menu-button");
 
             if (menuButton.classList.contains("fa-bars")) {
                 listMenu.classList.replace("bottom-[100%]", "top-[100%]");
