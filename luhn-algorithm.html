@@ -221,17 +221,16 @@
                     }
 
                     result.style.color = "green";
-                    return false;
                 } else {
                     result.innerHTML = '<i class="fa-regular fa-thumbs-down fa-bounce"></i> This is an invalid card number!';
                     result.style.color = "red";
-                    return false;
                 }
             } else {
                 result.innerHTML = '<i class="fa-regular fa-circle-xmark fa-beat"></i> Please enter the correct number!';
                 result.style.color = "orange";
-                return false;
             }
+
+            return false;
         }
     </script>
 </body>
