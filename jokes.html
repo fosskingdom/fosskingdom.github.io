@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./Assets/Anonymous_emblem.svg.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Jokes</title>
+</head>
+
+<body class="bg-green-300">
+    <nav class="h-[100px] w-full bg-black text-white relative flex flex-row justify-around items-center lg:static">
+        <div>
+            <a href="./index.html">
+                <h1 title="FOSS Kingdom" class="font-bold text-lg">FOSS Kingdom</h1>
+            </a>
+        </div>
+
+        <div id="list-menu"
+            class="absolute bg-green-500 w-full bottom-[100%] transition-transform duration-300 lg:static lg:bg-black lg:w-fit">
+            <ul class="flex flex-col py-5 items-center gap-[4vh] lg:flex-row lg:py-0">
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="./index.html">Home</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="https://fosskingdom.github.io#about-us">About Us</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="https://fosskingdom.github.io#foss-projects">FOSS Projects</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="#">Privacy Policy</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="./portfolio.html">Portfolio</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="#">Contact</a>
+                </li>
+
+                <li>
+                    <a class="hover:underline hover:text-blue-600 p-0 rounded font-bold duration-300 lg:p-2 lg:hover:bg-white lg:hover:no-underline"
+                        href="#">Feedback</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="block lg:hidden">
+            <i onclick="toggleMenu();" id="menu-button" class="fa-solid fa-bars font-bold text-green-500"></i>
+        </div>
+    </nav>
+
+    <div class="flex items-center justify-around h-screen">
+        <div
+            class="w-20 border-2 border-green-600 flex items-center justify-around w-[90%] rounded-lg shadow-lg bg-green-100">
+            <p id="text-area" class="p-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta nihil
+                similique aperiam eius iure, iste magni ut corporis repudiandae a saepe facere quas eos tempore
+                consectetur hic facilis quibusdam eum!</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const listMenu = window.document.getElementById("list-menu");
+            const menuButton = window.document.getElementById("menu-button");
+
+            if (menuButton.classList.contains("fa-bars")) {
+                listMenu.classList.replace("bottom-[100%]", "top-[100%]");
+                menuButton.classList.replace("fa-bars", "fa-times");
+            } else {
+                listMenu.classList.replace("top-[100%]", "bottom-[100%]");
+                menuButton.classList.replace("fa-times", "fa-bars");
+            }
+        }
+
+        const textArea = window.document.getElementById("text-area");
+        const jokeDatabase = [
+            "I had a problem so I thought I'd use Java. Now I have a ProblemFactory.",
+            "How many programmers does it take to change a lightbulb? None, that's a hardware problem.",
+            "How many QAs does it take to change a lightbulb? They noticed that the room was dark. They don't fix problems, they find them.",
+            "If you put a million monkeys at a million keyboards, one of them will eventually write a Java program. The rest of them will write Perl."
+        ];
+        const randomIndex = Math.floor(Math.random() * jokeDatabase.length);
+        const selectedItem = jokeDatabase[randomIndex];
+        textArea.innerText = selectedItem;
+    </script>
+</body>
+
+</html>
